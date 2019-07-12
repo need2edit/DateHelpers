@@ -14,16 +14,16 @@ final class DateHelpersTests: XCTestCase {
         let start = formatter.date(from: startString)!
         let end = formatter.date(from: endString)!
         
-        let daysBetween = start.days(between: end)
+        let daysBetween = start.days(until: end)
         XCTAssertEqual(daysBetween, 35)
         
-        let daysBetweenReversed = end.days(between: start)
+        let daysBetweenReversed = end.days(until: start)
         XCTAssertEqual(daysBetweenReversed, -35)
         
-        let monthsBetween = start.months(between: end)
+        let monthsBetween = start.months(until: end)
         XCTAssertEqual(monthsBetween, 1)
         
-        let monthsBetweenReversed = end.months(between: start)
+        let monthsBetweenReversed = end.months(until: start)
         XCTAssertEqual(monthsBetweenReversed, -1)
         
     }
